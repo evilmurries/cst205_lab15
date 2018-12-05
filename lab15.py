@@ -1,17 +1,21 @@
-#lab15 - Team 10
+# Lab15 - Team 10
 # M. Mariscal, C. Piwarski, W. Robleh
+# Developed with Python2 and JES
 
-###############################################################################################################
+################################################################################
 # Problem 1
-###############################################################################################################
+################################################################################
 
 import random
+import datetime
 
 def problem1():
-  welcomeMessage ='On this first roll, a 7 or an 11 automatically wins, and a 2, 3, or 12 automatically loses,\
-and play is over. If a 4, 5, 6, 8, 9, or 10 are rolled on this first roll, that number becomes the "point.\
-The player continues to roll the two dice again until one of two things happens: either they roll the "point" \
-again, in which case they win; or they roll a 7, in which case they lose.'
+  welcomeMessage ='On this first roll, a 7 or an 11 automatically wins, and a 2,\
+3, or 12 automatically loses, and play is over. If a 4, 5, 6, 8, 9, or 10 are\
+ rolled on this first roll, that number becomes the "point. The player\
+  continues to roll the two dice again until one of two things happens: \
+either they roll the "point" again, in which case they win; or they roll a 7,\
+ in which case they lose.'
   rollAgain = True
   
   # introduce game
@@ -22,8 +26,6 @@ again, in which case they win; or they roll a 7, in which case they lose.'
      showInformation('Goodbye')
       
   # first roll
-  
-  # roll dice
   dice1 = random.randint(1, 6)
   dice2 = random.randint(1, 6)
   showInformation('Dice1: %d\nDice2: %d' % (dice1, dice2))
@@ -62,6 +64,13 @@ again, in which case they win; or they roll a 7, in which case they lose.'
   else:
     showInformation('I am sorry, you lose this round.')
   
+################################################################################
+# Problem 2
+################################################################################
+
+def problem2():
+  return
 
 if __name__ == '__main__':
   problem1()
+  problem2()
