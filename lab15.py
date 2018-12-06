@@ -68,7 +68,42 @@ either they roll the "point" again, in which case they win; or they roll a 7,\
 # Problem 2
 ################################################################################
 
+import calendar
+from datetime import date
+
+def printDateMonth(year, month):
+  c = calendar.prmonth(year, month)
+  print c
+
+def days_until_next(month, day):
+  today = date.today()
+  birthday = date(today.year, month, day)
+  days_until_birth = (birthday - today).days
+  if days_until_birth > 0:
+    print('It is ' + str(days_until_birth) + ' day(s) until your birthday!')
+  elif days_until_birth == 0:
+    print('Happy Birthday!')
+  else:
+    new = 365 - abs(days_until_birth) # make sure that it returns new year
+    print('Your birthday is in the next ' + str(new) + ' days')
+
+def dayOfWeek(year, month, day):
+  weekOf = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+  monthOf = ["January", "February", ]
+  day = date(year, month, day).isoweekday()
+  print weekOf[day - 1] + ' ' + calendar.month_name[month] + ' ' + str(day) + ', ' + str(year)
+  
+  
 def problem2():
+
+  year = int(input('What year were born? [YY] '))
+  month = int(input('When is your birthday? [MM] '))
+  day = int(input('When is your birthday? [DD] '))
+  
+  
+  printDateMonth(year, month)
+  days_until_next(month, day)
+  dayOfWeek(1776, 7 , 4)
   return
 
 if __name__ == '__main__':
