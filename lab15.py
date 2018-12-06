@@ -71,10 +71,12 @@ either they roll the "point" again, in which case they win; or they roll a 7,\
 import calendar
 from datetime import date
 
+#prints the calendar month of when you are born.
 def printDateMonth(year, month):
   c = calendar.prmonth(year, month)
   print c
 
+#prints the days until next birthday.
 def days_until_next(month, day):
   today = date.today()
   birthday = date(today.year, month, day)
@@ -87,13 +89,17 @@ def days_until_next(month, day):
     new = 365 - abs(days_until_birth) # make sure that it returns new year
     print('Your birthday is in the next ' + str(new) + ' days')
 
+#prints day of week when the declaratio nof independence occurs
 def dayOfWeek(year, month, day):
   weekOf = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
   monthOf = ["January", "February", ]
   day = date(year, month, day).isoweekday()
   print weekOf[day - 1] + ' ' + calendar.month_name[month] + ' ' + str(day) + ', ' + str(year)
   
-  
+
+
+#problem 2 takes 3 inputs to put everything together.
+#Those three inputs are the users birthday.    
 def problem2():
 
   year = int(input('What year were born? [YY] '))
@@ -103,7 +109,7 @@ def problem2():
   
   printDateMonth(year, month)
   days_until_next(month, day)
-  dayOfWeek(1776, 7 , 4)
+  dayOfWeek(1776, 7 , 4) #declaration of independence part
   return
 
 if __name__ == '__main__':
