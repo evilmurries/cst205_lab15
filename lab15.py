@@ -92,7 +92,6 @@ def days_until_next(month, day):
 #prints day of week when the declaratio nof independence occurs
 def dayOfWeek(year, month, day):
   weekOf = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-  monthOf = ["January", "February", ]
   day = date(year, month, day).isoweekday()
   print weekOf[day - 1] + ' ' + calendar.month_name[month] + ' ' + str(day) + ', ' + str(year)
   
