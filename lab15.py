@@ -93,6 +93,7 @@ def days_until_next(month, day):
 def dayOfWeek(year, month, day):
   weekOf = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
   day = date(year, month, day).isoweekday()
+  print 'The Declaration of Independence was signed on: '
   print weekOf[day - 1] + ' ' + calendar.month_name[month] + ' ' + str(day) + ', ' + str(year)
   
 
